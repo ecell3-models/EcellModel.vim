@@ -8,5 +8,5 @@ Add following line to your `.vimrc` and run `:NeoBudleInstall`.
 NeoBundle 'iTakeshi/EcellModel.vim'
 ```
 
-### VERSIOM
-0.1.1
+### VERSION
+0.1.2
