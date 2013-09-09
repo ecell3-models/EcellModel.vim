@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 8
-" Version: 0.1.2
+" Version: 0.1.3
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -33,6 +33,7 @@ syn keyword EcellModelProperty StepperID Value VariableReferenceList
 syn match EcellModelNumber "\<[1-9]\d*\>"
 syn match EcellModelNumber "\<[1-9]\d*\.\d\+\>"
 syn match EcellModelNumber "\<0\.\d\+\>"
+syn match EcellModelNumber "\<[1-9]\d*[eE]-\=\d+\>"
 syn match EcellModelNumber "\<[1-9]\d*\.\d\+[eE]-\=\d+\>"
 syn match EcellModelNumber "\<0\.\d\+[eE][+-]\=\d+\>"
 
