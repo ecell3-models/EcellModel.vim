@@ -58,7 +58,7 @@ if version >= 508 || !exists("did_python_expression_syntax_inits")
   endif
 
   HiLink PythonExpressionConstant  Constant
-  HiLink PythonExpressionFunction  Funcion
+  HiLink PythonExpressionFunction  Function
   HiLink PythonExpressionObject    Constant
   HiLink PythonExpressionAttribute Statement
   HiLink PythonExpressionNumber    Constant
