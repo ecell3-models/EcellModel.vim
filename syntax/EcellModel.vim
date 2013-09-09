@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.1.8
+" Version: 0.1.9
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -18,13 +18,23 @@ set cpo&vim
 
 " Keyword
 syn keyword EcellModelStepper Stepper
+syn keyword EcellModelStepper DifferentialStepper DiscreateEventStepper
+syn keyword EcellModelStepper DiscreteTimeStepper PassiveStepper
+syn keyword EcellModelStepper DAEStepper ESSYNSStepper FixedDAE1Stepper
+syn keyword EcellModelStepper FixedODE1Stepper FluxDistributionStepper
+syn keyword EcellModelStepper ODE23Stepper ODE45Stepper ODEStepper TauLeapStepper
 syn keyword EcellModelSystem System
 syn keyword EcellModelVariable Variable
 syn keyword EcellModelProcess Process
+syn keyword EcellModelProcess ConstantFluxProcess DecayFluxProcess
+syn keyword EcellModelProcess ExpressionAlgebraicProcess ExpressionAssignmentProcess
+syn keyword EcellModelProcess ExpressionFluxProcess GillespieProcess GMAProcess
+syn keyword EcellModelProcess MassActionFluxProcess MichaelisUniUniFluxProcess
+syn keyword EcellModelProcess PythonFluxProcess PythonProcess QuasiDynamicFluxProcess
+syn keyword EcellModelProcess SSystemProcess TauLeapProcess
 
 " Property
-" TODO add many more
-syn keyword EcellModelProperty StepperID Value VariableReferenceList
+syn keyword EcellModelProperty Name Priority StepperID Value VariableReferenceList
 
 " List
 " TODO
