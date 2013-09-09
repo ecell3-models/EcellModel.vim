@@ -39,7 +39,7 @@ syn keyword EcellModelProperty Name Priority StepperID Value VariableReferenceLi
 " List
 syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,EcellModelList
 syn region EcellModelList matchgroup=EcellModelListDelimiter
-      \ start="[" end="]" contains=@EcellModelListChildren
+      \ start="\[" end="\]" contains=@EcellModelListChildren
 
 " Entity ID
 " TODO
