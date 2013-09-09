@@ -54,6 +54,7 @@ syn keyword EcellModelTodo contained TODO NOTE FIXME XXX
 syn include @Python syntax/python.vim
 unlet b:current_syntax
 syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter start="@{" end="}" contains=@Python
+syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter start="@(" end=")" contains=@Python
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
