@@ -106,6 +106,7 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelString    String
   HiLink EcellModelComment   Comment
   HiLink EcellModelTODO      TODO
+  HiLink EcellModelListDelimiter             Delimiter
   HiLink EcellModelPythonPreProcDelimiter    Delimiter
   HiLink EcellModelPythonExpressionDelimiter Delimiter
 
