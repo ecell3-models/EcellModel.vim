@@ -24,7 +24,7 @@ syn keyword EcellModelProcess Process
 
 " Property
 " TODO: add many more
-syn keyword EcellModelProperty Expression StepperID Value VariableReferenceList
+syn keyword EcellModelProperty StepperID Value VariableReferenceList
 
 " List
 " TODO
@@ -50,11 +50,19 @@ syn match EcellModelComment "#.*$" contains=EcellModelToDo
 " ToDo
 syn keyword EcellModelTodo contained TODO NOTE FIXME XXX
 
-" PythonPreProc
+" Include Python Syntax
 syn include @Python syntax/python.vim
+
+" PythonPreProc
 unlet b:current_syntax
-syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter start="@{" end="}" contains=@Python
-syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter start="@(" end=")" contains=@Python
+syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
+      \ start="@{" end="}" contains=@Python
+syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
+      \ start="@(" end=")" contains=@Python
+
+" Python Expression in Process
+syn region EcellModelPythonExpression matchgroup=EcellModelPythonExpressionDelimiter
+      \ start="Expression\s\+\"" end="\"" contains=@Python
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -77,7 +85,8 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelString    String
   HiLink EcellModelComment   Comment
   HiLink EcellModelTODO      TODO
-  HiLink EcellModelPythonPreProcDelimiter Delimiter
+  HiLink EcellModelPythonPreProcDelimiter    Delimiter
+  HiLink EcellModelPythonExpressionDelimiter Delimiter
 
   delcommand HiLink
 endif
