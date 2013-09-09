@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.11
+" Version: 0.12
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -35,6 +35,7 @@ syn keyword EcellModelProcess SSystemProcess TauLeapProcess
 
 " Property
 syn keyword EcellModelProperty Name Priority StepperID Value VariableReferenceList
+syn keyword EcellModelProperty IsContinuous InitializeMethod FireMethod
 
 " List
 syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,EcellModelList
@@ -69,21 +70,20 @@ syn match EcellModelComment "#.*$" contains=EcellModelToDo
 " ToDo
 syn keyword EcellModelTodo contained TODO NOTE FIXME XXX
 
-" Include Python Syntax
-syn include @Python syntax/python.vim
-
 " PythonPreProc
+syn include @Python syntax/python.vim
 unlet b:current_syntax
 syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
       \ start="@{" end="}" contains=@Python
 syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
       \ start="@(" end=")" contains=@Python
 
+
 " Python Expression in Process
-" TODO from-scrach syntax definition needed
-"      because PythonExpression has not complete python syntax
+syn include @PythonExpression <sfile>:p:h/PythonExpression.vim
+unlet b:current_syntax
 syn region EcellModelPythonExpression matchgroup=EcellModelPythonExpressionDelimiter
-      \ start="Expression\s\+\"" end="\"" contains=@Python
+      \ start="Expression\s\+\"" end="\"" contains=@PythonExpression
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
