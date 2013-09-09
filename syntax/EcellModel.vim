@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.13
+" Version: 0.14
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -82,7 +82,7 @@ syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
 " Python Expression in Process
 syn include @PythonExpression <sfile>:p:h/PythonExpression.vim
 unlet b:current_syntax
-syn region EcellModelPythonExpression matchgroup=EcellModelPythonExpressionDelimiter
+syn region EcellModelPythonExpression oneline matchgroup=EcellModelPythonExpressionDelimiter
       \ start="Expression\s\+\"" end="\"" contains=@PythonExpression
 
 " Define the default highlighting.

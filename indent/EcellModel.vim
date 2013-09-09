@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.13
+" Version: 0.14
 " License: Same as Vim.
 
 " Only load this indent file when no other was loaded.
