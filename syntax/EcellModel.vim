@@ -48,12 +48,13 @@ syn region EcellModelList matchgroup=EcellModelListDelimiter
 " TODO
 
 " Number
-syn match EcellModelNumber "\<[1-9]\d*\>"
-syn match EcellModelNumber "\<[1-9]\d*\.\d\+\>"
-syn match EcellModelNumber "\<0\.\d\+\>"
-syn match EcellModelNumber "\<[1-9]\d*[eE][+-]\=\d\+\>"
-syn match EcellModelNumber "\<[1-9]\d*\.\d\+[eE][+-]\=\d\+\>"
-syn match EcellModelNumber "\<0\.\d\+[eE][+-]\=\d\+\>"
+syn match EcellModelNumber "\<0\>"
+syn match EcellModelNumber "\<-\=[1-9]\d*\>"
+syn match EcellModelNumber "\<-\=[1-9]\d*\.\d\+\>"
+syn match EcellModelNumber "\<-\=0\.\d\+\>"
+syn match EcellModelNumber "\<-\=[1-9]\d*[eE][+-]\=\d\+\>"
+syn match EcellModelNumber "\<-\=[1-9]\d*\.\d\+[eE][+-]\=\d\+\>"
+syn match EcellModelNumber "\<-\=0\.\d\+[eE][+-]\=\d\+\>"
 
 " String
 syn region EcellModelString start=+'+ end=+'+
