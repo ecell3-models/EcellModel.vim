@@ -32,7 +32,9 @@ syn keyword EcellModelProperty StepperID Value VariableReferenceList
 " Number
 syn match EcellModelNumber "\<[1-9]\d*\>"
 syn match EcellModelNumber "\<[1-9]\d*\.\d\+\>"
-syn match EcellModelNumber "\<[1-9]\d*\.\d\+e-\=\d+\>"
+syn match EcellModelNumber "\<0\.\d\+\>"
+syn match EcellModelNumber "\<[1-9]\d*\.\d\+[eE]-\=\d+\>"
+syn match EcellModelNumber "\<0\.\d\+[eE][+-]\=\d+\>"
 
 " String
 syn region EcellModelString start=+'+ end=+'+
