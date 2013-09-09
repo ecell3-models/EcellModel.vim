@@ -24,7 +24,7 @@ syn keyword EcellModelProcess Process
 
 " Property
 " TODO: add many more
-syn keyword EcellModelProperty StepperID Value VariableReferenceList
+syn keyword EcellModelProperty Expression StepperID Value VariableReferenceList
 
 " List
 " TODO
@@ -70,7 +70,7 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelStepper   Type
   HiLink EcellModelSystem    PreProc
   HiLink EcellModelVariable  Label
-  HiLink EcellModelProcess   Function
+  HiLink EcellModelProcess   Title
   HiLink EcellModelProperty  Identifier
   HiLink EcellModelSemicolon SpecialChar
   HiLink EcellModelNumber    Number
