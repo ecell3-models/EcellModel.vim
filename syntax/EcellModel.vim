@@ -77,6 +77,8 @@ syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
       \ start="@(" end=")" contains=@Python
 
 " Python Expression in Process
+" TODO from-scrach syntax definition needed
+"      because PythonExpression has not complete python syntax
 syn region EcellModelPythonExpression matchgroup=EcellModelPythonExpressionDelimiter
       \ start="Expression\s\+\"" end="\"" contains=@Python
 
