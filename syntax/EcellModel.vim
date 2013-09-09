@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 8
-" Version: 0.1.3
+" Version: 0.1.4
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -50,6 +50,10 @@ syn match EcellModelComment "#.*$" contains=EcellModelToDo
 " ToDo
 syn keyword EcellModelTodo contained TODO NOTE FIXME XXX
 
+" PythonPreProc
+syn include @Python "syntax/python.vim"
+syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter start="@{" end="}" contains=@Python
+
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
@@ -71,6 +75,7 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelString    String
   HiLink EcellModelComment   Comment
   HiLink EcellModelTODO      TODO
+  HiLink EcellModelPythonPreProcDelimiter Delimiter
 
   delcommand HiLink
 endif
