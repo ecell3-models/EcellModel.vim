@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.1.7
+" Version: 0.1.8
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -23,10 +23,16 @@ syn keyword EcellModelVariable Variable
 syn keyword EcellModelProcess Process
 
 " Property
-" TODO: add many more
+" TODO add many more
 syn keyword EcellModelProperty StepperID Value VariableReferenceList
 
 " List
+" TODO
+
+" Entity ID
+" TODO
+
+" System Path
 " TODO
 
 " Number
