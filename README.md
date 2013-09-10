@@ -9,4 +9,4 @@ NeoBundle 'iTakeshi/EcellModel.vim'
 ```
 
 ### VERSION
-0.19
+1.0

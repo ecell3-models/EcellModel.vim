@@ -2,7 +2,7 @@
 " Language: Modified Python in E-cell Model PythonProcess
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 10
-" Version: 0.19
+" Version: 1.0
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
