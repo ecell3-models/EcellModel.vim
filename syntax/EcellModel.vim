@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.18
+" Version: 0.19
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -39,24 +39,20 @@ syn keyword EcellModelProperty IsContinuous StepInterval Tolerance MinStepInterv
 syn keyword EcellModelProperty SSystemMatrix GMAMatrix epsilon Activity
 
 " List
-syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,EcellModelList
+syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,EcellModelList,EcellModelFullID
 syn region EcellModelList matchgroup=EcellModelListDelimiter
       \ start="\[" end="\]" contains=@EcellModelListChildren
 
 " System Path
-syn match EcellModelSystemPath "/"
-syn match EcellModelSystemPath "\(/\a\+\)\+/"
-syn match EcellModelSystemPath "\(/\a\+\)\+"
-syn match EcellModelSystemPath "\." contained
-syn match EcellModelSystemPath "\./" contained
-syn match EcellModelSystemPath "\.\(/\a\+\)\+/" contained
-syn match EcellModelSystemPath "\.\(/\a\+\)\+" contained
-syn match EcellModelSystemPath "\.\." contained
-syn match EcellModelSystemPath "\.\./" contained
-syn match EcellModelSystemPath "\.\.\(/\a\+\)\+/" contained
-syn match EcellModelSystemPath "\.\.\(/\a\+\)\+" contained
+" FIXME imcompatible for edge case such as "......./"
+syn match EcellModelSystemPath "\(\.\|\.\.\)\=\(\/\(\/\|\a\)*\)\="
 
-" Entity ID
+" Entity FullID
+syn match EcellModelFullIDDelimiter ":" contained
+syn match EcellModelFullID "\(System\|Process\|Variable\)\=\:\(\.\|\.\.\)\=\(\/\(\/\|\a\)*\)\=\:.\+"
+      \ contains=EcellModelSystemPath,EcellModelSystem,EcellModelProcess,EcellModelVariable,EcellModelFullIDDelimiter
+
+" Property FullPN
 " TODO
 
 " Number
@@ -145,6 +141,7 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelPythonPreProcDelimiter         Delimiter
   HiLink EcellModelPythonInPythonProcessDelimiter Delimiter
   HiLink EcellModelExpressionDelimiter            Delimiter
+  HiLink EcellModelFullIDDelimiter                Delimiter
 
   delcommand HiLink
 endif
