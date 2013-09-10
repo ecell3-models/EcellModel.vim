@@ -83,14 +83,29 @@ syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
 syn include @EcellModelPythonInPythonProcessSyntax <sfile>:p:h/EcellModelPythonInPythonProcess.vim
 unlet b:current_syntax
 syn region EcellModelPythonInPythonProcess matchgroup=EcellModelPythonInPythonProcessDelimiter
-      \ start="\(Initialize\|Fire\)Method\s\+\('''\|\"\"\"\|'\|\"\)" end="\('''\|\"\"\"\|'\|\"\)"
+      \ start="\(Initialize\|Fire\)Method\s\+'" end="'"
+      \ contains=@EcellModelPythonInPythonProcessSyntax
+syn region EcellModelPythonInPythonProcess matchgroup=EcellModelPythonInPythonProcessDelimiter
+      \ start="\(Initialize\|Fire\)Method\s\+\"" end="\""
+      \ contains=@EcellModelPythonInPythonProcessSyntax
+syn region EcellModelPythonInPythonProcess matchgroup=EcellModelPythonInPythonProcessDelimiter
+      \ start="\(Initialize\|Fire\)Method\s\+'''" end="'''"
+      \ contains=@EcellModelPythonInPythonProcessSyntax
+syn region EcellModelPythonInPythonProcess matchgroup=EcellModelPythonInPythonProcessDelimiter
+      \ start="\(Initialize\|Fire\)Method\s\+\"\"\"" end="\"\"\""
       \ contains=@EcellModelPythonInPythonProcessSyntax
 
 " ExpressionProcess syntax
 syn include @EcellModelExpressionSyntax <sfile>:p:h/EcellModelExpression.vim
 unlet b:current_syntax
 syn region EcellModelExpression oneline matchgroup=EcellModelExpressionDelimiter
-      \ start="Expression\s\+\('''\|\"\"\"\|'\|\"\)" end="\('''\|\"\"\"\|'\|\"\)" contains=@EcellModelExpressionSyntax
+      \ start="Expression\s\+'" end="'" contains=@EcellModelExpressionSyntax
+syn region EcellModelExpression oneline matchgroup=EcellModelExpressionDelimiter
+      \ start="Expression\s\+\"" end="\"" contains=@EcellModelExpressionSyntax
+syn region EcellModelExpression oneline matchgroup=EcellModelExpressionDelimiter
+      \ start="Expression\s\+'''" end="'''" contains=@EcellModelExpressionSyntax
+syn region EcellModelExpression oneline matchgroup=EcellModelExpressionDelimiter
+      \ start="Expression\s\+\"\"\"" end="\"\"\"" contains=@EcellModelExpressionSyntax
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
