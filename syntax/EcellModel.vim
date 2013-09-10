@@ -81,20 +81,14 @@ syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
 " PythonProcess syntax
 syn include @EcellModelPythonInPythonProcessSyntax <sfile>:p:h/EcellModelPythonInPythonProcess.vim
 unlet b:current_syntax
-syn region EcellModelPythonProcess
-      \ start="Python(Flux)\=Process" end="}"
-      \ contains=EcellModelPythonInPythonProcess
-syn region EcellModelPythonInPythonProcess contained
+syn region EcellModelPythonInPythonProcess matchgroup=EcellModelPythonInPythonProcessDelimiter
       \ start="(Initialize|Fire)Method\s\+\"" end="\""
       \ contains=@EcellModelPythonInPythonProcessSyntax
 
 " ExpressionProcess syntax
 syn include @EcellModelExpressionSyntax <sfile>:p:h/EcellModelExpression.vim
 unlet b:current_syntax
-syn region EcellModelExpressionProcess
-      \ start="Expression(Algebraic|Assignment|Flux)Process" end="}"
-      \ contains=EcellModelExpression
-syn region EcellModelExpression oneline contained matchgroup=EcellModelExpressionDelimiter
+syn region EcellModelExpression oneline matchgroup=EcellModelExpressionDelimiter
       \ start="Expression\s\+\"" end="\"" contains=@EcellModelExpressionSyntax
 
 " Define the default highlighting.
@@ -118,9 +112,10 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelString    String
   HiLink EcellModelComment   Comment
   HiLink EcellModelTODO      TODO
-  HiLink EcellModelListDelimiter             Delimiter
-  HiLink EcellModelPythonPreProcDelimiter    Delimiter
-  HiLink EcellModelPythonExpressionDelimiter Delimiter
+  HiLink EcellModelListDelimiter                  Delimiter
+  HiLink EcellModelPythonPreProcDelimiter         Delimiter
+  HiLink EcellModelPythonInPythonProcessDelimiter Delimiter
+  HiLink EcellModelPythonExpressionDelimiter      Delimiter
 
   delcommand HiLink
 endif
