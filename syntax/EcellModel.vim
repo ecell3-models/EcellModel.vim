@@ -35,7 +35,9 @@ syn keyword EcellModelProcess SSystemProcess TauLeapProcess
 
 " Property
 syn keyword EcellModelProperty Name Priority StepperID Value VariableReferenceList
-syn keyword EcellModelProperty IsContinuous
+syn keyword EcellModelProperty IsContinuous StepInterval Tolerance MinStepInterval
+syn keyword EcellModelProperty SSystemMatrix GMAMatrix epsilon Activity
+
 " List
 syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,EcellModelList
 syn region EcellModelList matchgroup=EcellModelListDelimiter
