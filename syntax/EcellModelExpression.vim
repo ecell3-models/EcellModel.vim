@@ -2,7 +2,7 @@
 " Language: Original Expression Syntax for E-cell Model Expression Process
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.16
+" Version: 0.17
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
