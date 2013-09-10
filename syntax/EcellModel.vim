@@ -35,8 +35,7 @@ syn keyword EcellModelProcess SSystemProcess TauLeapProcess
 
 " Property
 syn keyword EcellModelProperty Name Priority StepperID Value VariableReferenceList
-syn keyword EcellModelProperty IsContinuous InitializeMethod FireMethod
-
+syn keyword EcellModelProperty IsContinuous
 " List
 syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,EcellModelList
 syn region EcellModelList matchgroup=EcellModelListDelimiter
@@ -84,14 +83,14 @@ syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
 syn include @EcellModelPythonInPythonProcessSyntax <sfile>:p:h/EcellModelPythonInPythonProcess.vim
 unlet b:current_syntax
 syn region EcellModelPythonInPythonProcess matchgroup=EcellModelPythonInPythonProcessDelimiter
-      \ start="(Initialize|Fire)Method\s\+\"" end="\""
+      \ start="\(Initialize\|Fire\)Method\s\+\('''\|\"\"\"\|'\|\"\)" end="\('''\|\"\"\"\|'\|\"\)"
       \ contains=@EcellModelPythonInPythonProcessSyntax
 
 " ExpressionProcess syntax
 syn include @EcellModelExpressionSyntax <sfile>:p:h/EcellModelExpression.vim
 unlet b:current_syntax
 syn region EcellModelExpression oneline matchgroup=EcellModelExpressionDelimiter
-      \ start="Expression\s\+\"" end="\"" contains=@EcellModelExpressionSyntax
+      \ start="Expression\s\+\('''\|\"\"\"\|'\|\"\)" end="\('''\|\"\"\"\|'\|\"\)" contains=@EcellModelExpressionSyntax
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
