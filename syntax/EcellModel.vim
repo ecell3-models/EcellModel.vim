@@ -115,7 +115,7 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelListDelimiter                  Delimiter
   HiLink EcellModelPythonPreProcDelimiter         Delimiter
   HiLink EcellModelPythonInPythonProcessDelimiter Delimiter
-  HiLink EcellModelPythonExpressionDelimiter      Delimiter
+  HiLink EcellModelExpressionDelimiter            Delimiter
 
   delcommand HiLink
 endif
