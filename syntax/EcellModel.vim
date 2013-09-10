@@ -47,13 +47,15 @@ syn region EcellModelList matchgroup=EcellModelListDelimiter
 " FIXME imcompatible for edge case such as "......./"
 syn match EcellModelSystemPath "\(\.\|\.\.\)\=\(\/\(\/\|\a\)*\)\="
 
+syn match EcellModelDelimiterColon ":" contained
+
 " Entity FullID
-syn match EcellModelFullIDDelimiter ":" contained
-syn match EcellModelFullID "\(System\|Process\|Variable\)\=\:\(\.\|\.\.\)\=\(\/\(\/\|\a\)*\)\=\:.\+"
-      \ contains=EcellModelSystemPath,EcellModelSystem,EcellModelProcess,EcellModelVariable,EcellModelFullIDDelimiter
+syn match EcellModelFullPN "\(System\|Process\|Variable\)\=\:\(\.\|\.\.\)\=\(\/\(\/\|\a\)*\)\=\:\S\+"
+      \ contains=EcellModelSystemPath,EcellModelSystem,EcellModelProcess,EcellModelVariable,EcellModelDelimiterColon
 
 " Property FullPN
-" TODO
+syn match EcellModelFullID "\(System\|Process\|Variable\)\=\:\(\.\|\.\.\)\=\(\/\(\/\|\a\)*\)\=\:\S\+\:\S\+"
+      \ contains=EcellModelSystemPath,EcellModelSystem,EcellModelProcess,EcellModelVariable,EcellModelDelimiterColon,EcellModelProperty
 
 " Number
 syn match EcellModelNumber "\<0\>"
@@ -141,7 +143,7 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
   HiLink EcellModelPythonPreProcDelimiter         Delimiter
   HiLink EcellModelPythonInPythonProcessDelimiter Delimiter
   HiLink EcellModelExpressionDelimiter            Delimiter
-  HiLink EcellModelFullIDDelimiter                Delimiter
+  HiLink EcellModelDelimiterColon                 Delimiter
 
   delcommand HiLink
 endif
