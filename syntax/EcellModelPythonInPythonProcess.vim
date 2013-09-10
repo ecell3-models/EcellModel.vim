@@ -24,7 +24,7 @@ unlet b:current_syntax
 syn keyword PythonProcessObject self VariableReference System
 
 " Object and Attribute
-syn keyword PythonProcessAttribute Activity addValue getSuperSystem() Priority
+syn keyword PythonProcessAttribute Activity addValue getSuperSystem Priority
 syn keyword PythonProcessAttribute setFlux StepperID Coefficient MolarConc
 syn keyword PythonProcessAttribute Name NumberConc IsFixed IsAccessor Value
 syn keyword PythonProcessAttribute Velocity Size SizeN_A StepperID

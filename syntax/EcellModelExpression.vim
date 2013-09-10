@@ -32,7 +32,7 @@ syn keyword EcellModelExpressionFunction eq neq gt lt geq leq and or xor not
 syn keyword EcellModelExpressionObject self VariableReference System
 
 " Object Attribute
-syn keyword EcellModelExpressionAttribute getSuperSystem() Value MolarConc NumberConc
+syn keyword EcellModelExpressionAttribute getSuperSystem Value MolarConc NumberConc
 syn keyword EcellModelExpressionAttribute TotalVelocity Velocity Size SizeN_A
 
 " Number
