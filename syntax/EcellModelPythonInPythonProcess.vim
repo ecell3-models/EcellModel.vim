@@ -17,7 +17,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 " Start with default Python syntax
-runtime! syntax/c.vim
+runtime! syntax/python.vim
 unlet b:current_syntax
 
 " Object
