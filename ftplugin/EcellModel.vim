@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.15
+" Version: 0.16
 " License: Same as Vim.
 
 if exists("b:did_ftplugin")

@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.15
+" Version: 0.16
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -78,12 +78,24 @@ syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
 syn region EcellModelPythonPreProc matchgroup=EcellModelPythonPreProcDelimiter
       \ start="@(" end=")" contains=@Python
 
-
-" Python Expression in Process
-syn include @PythonExpression <sfile>:p:h/PythonExpression.vim
+" PythonProcess syntax
+syn include @EcellModelPythonInPythonProcessSyntax <sfile>:p:h/EcellModelPythonInPythonProcess.vim
 unlet b:current_syntax
-syn region EcellModelPythonExpression oneline matchgroup=EcellModelPythonExpressionDelimiter
-      \ start="Expression\s\+\"" end="\"" contains=@PythonExpression
+syn region EcellModelPythonProcess
+      \ start="Python(Flux)\=Process" end="}"
+      \ contains=EcellModelPythonInPythonProcess
+syn region EcellModelPythonInPythonProcess contained
+      \ start="(Initialize|Fire)Method\s\+\"" end="\""
+      \ contains=@EcellModelPythonInPythonProcessSyntax
+
+" ExpressionProcess syntax
+syn include @EcellModelExpressionSyntax <sfile>:p:h/EcellModelExpression.vim
+unlet b:current_syntax
+syn region EcellModelExpressionProcess
+      \ start="Expression(Algebraic|Assignment|Flux)Process" end="}"
+      \ contains=EcellModelExpression
+syn region EcellModelExpression oneline contained matchgroup=EcellModelExpressionDelimiter
+      \ start="Expression\s\+\"" end="\"" contains=@EcellModelExpressionSyntax
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
