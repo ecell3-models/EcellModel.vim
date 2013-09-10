@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.17
+" Version: 0.18
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -43,10 +43,20 @@ syn cluster EcellModelListChildren contains=EcellModelNumber,EcellModelString,Ec
 syn region EcellModelList matchgroup=EcellModelListDelimiter
       \ start="\[" end="\]" contains=@EcellModelListChildren
 
-" Entity ID
-" TODO
-
 " System Path
+syn match EcellModelSystemPath "/"
+syn match EcellModelSystemPath "\(/\a\+\)\+/"
+syn match EcellModelSystemPath "\(/\a\+\)\+"
+syn match EcellModelSystemPath "\." contained
+syn match EcellModelSystemPath "\./" contained
+syn match EcellModelSystemPath "\.\(/\a\+\)\+/" contained
+syn match EcellModelSystemPath "\.\(/\a\+\)\+" contained
+syn match EcellModelSystemPath "\.\." contained
+syn match EcellModelSystemPath "\.\./" contained
+syn match EcellModelSystemPath "\.\.\(/\a\+\)\+/" contained
+syn match EcellModelSystemPath "\.\.\(/\a\+\)\+" contained
+
+" Entity ID
 " TODO
 
 " Number
@@ -120,16 +130,17 @@ if version >= 508 || !exists("did_ecell_model_syntax_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink EcellModelStepper   Type
-  HiLink EcellModelSystem    PreProc
-  HiLink EcellModelVariable  Label
-  HiLink EcellModelProcess   Title
-  HiLink EcellModelProperty  Identifier
-  HiLink EcellModelSemicolon SpecialChar
-  HiLink EcellModelNumber    Number
-  HiLink EcellModelString    String
-  HiLink EcellModelComment   Comment
-  HiLink EcellModelTODO      TODO
+  HiLink EcellModelStepper    Type
+  HiLink EcellModelSystem     PreProc
+  HiLink EcellModelVariable   Label
+  HiLink EcellModelProcess    Title
+  HiLink EcellModelProperty   Identifier
+  HiLink EcellModelSemicolon  SpecialChar
+  HiLink EcellModelSystemPath String
+  HiLink EcellModelNumber     Number
+  HiLink EcellModelString     String
+  HiLink EcellModelComment    Comment
+  HiLink EcellModelTODO       TODO
   HiLink EcellModelListDelimiter                  Delimiter
   HiLink EcellModelPythonPreProcDelimiter         Delimiter
   HiLink EcellModelPythonInPythonProcessDelimiter Delimiter
