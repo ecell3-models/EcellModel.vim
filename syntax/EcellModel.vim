@@ -61,6 +61,7 @@ syn match EcellModelNumber "\<0\.\d\+[eE][+-]\=\d\+\>"
 syn region EcellModelString start="'" end="'" oneline
 syn region EcellModelString start="\"" end="\"" oneline
 syn region EcellModelString start="'''" end="'''"
+syn region EcellModelString start="\"\"\"" end="\"\"\""
 
 " Semicolon
 syn match EcellModelSemicolon ";"
