@@ -2,7 +2,7 @@
 " Language: E-cell Model
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.14
+" Version: 0.15
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -49,13 +49,13 @@ syn region EcellModelList matchgroup=EcellModelListDelimiter
 " TODO
 
 " Number
-syn match EcellModelNumber "0"
-syn match EcellModelNumber "-\=[1-9]\d*"
-syn match EcellModelNumber "-\=[1-9]\d*\.\d\+"
-syn match EcellModelNumber "-\=0\.\d\+"
-syn match EcellModelNumber "-\=[1-9]\d*[eE][+-]\=\d\+"
-syn match EcellModelNumber "-\=[1-9]\d*\.\d\+[eE][+-]\=\d\+"
-syn match EcellModelNumber "-\=0\.\d\+[eE][+-]\=\d\+"
+syn match EcellModelNumber "\<0\>"
+syn match EcellModelNumber "\<[1-9]\d*\>"
+syn match EcellModelNumber "\<[1-9]\d*\.\d\+\>"
+syn match EcellModelNumber "\<0\.\d\+\>"
+syn match EcellModelNumber "\<[1-9]\d*[eE][+-]\=\d\+\>"
+syn match EcellModelNumber "\<[1-9]\d*\.\d\+[eE][+-]\=\d\+\>"
+syn match EcellModelNumber "\<0\.\d\+[eE][+-]\=\d\+\>"
 
 " String
 syn region EcellModelString start=+'+ end=+'+

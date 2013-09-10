@@ -2,7 +2,7 @@
 " Language: Python Expression for E-cell Model Process
 " Maintainer: Takeshi ITOH <takeshi.ito.doraemon@gmail.com>
 " Last Change:  2013 Sep. 9
-" Version: 0.14
+" Version: 0.15
 " License: Same as Vim.
 
 " For version 5.x: Clear all syntax items
@@ -38,13 +38,13 @@ syn keyword PythonExpressionAttribute Name NumberConc IsFixed IsAccessor Value
 syn keyword PythonExpressionAttribute Velocity Size SizeN_A StepperID
 
 " Number
-syn match PythonExpressionNumber "0"
-syn match PythonExpressionNumber "-\=[1-9]\d*"
-syn match PythonExpressionNumber "-\=[1-9]\d*\.\d\+"
-syn match PythonExpressionNumber "-\=0\.\d\+"
-syn match PythonExpressionNumber "-\=[1-9]\d*[eE][+-]\=\d\+"
-syn match PythonExpressionNumber "-\=[1-9]\d*\.\d\+[eE][+-]\=\d\+"
-syn match PythonExpressionNumber "-\=0\.\d\+[eE][+-]\=\d\+"
+syn match PythonExpressionNumber "\<0\>"
+syn match PythonExpressionNumber "\<[1-9]\d*\>"
+syn match PythonExpressionNumber "\<[1-9]\d*\.\d\+\>"
+syn match PythonExpressionNumber "\<0\.\d\+\>"
+syn match PythonExpressionNumber "\<[1-9]\d*[eE][+-]\=\d\+\>"
+syn match PythonExpressionNumber "\<[1-9]\d*\.\d\+[eE][+-]\=\d\+\>"
+syn match PythonExpressionNumber "\<0\.\d\+[eE][+-]\=\d\+\>"
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
