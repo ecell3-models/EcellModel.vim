@@ -1,5 +1,5 @@
 # EcellModel.vim
-E-cell Model (\*.em) file syntax and indent for Vim.
+[E-cell Version 3](https://github.com/ecell/ecell3) Model file (\*.em) syntax and indent for Vim.
 
 ### INSTALL
 Using [NeoBundle](https://github.com/Shougo/neobundle.vim) is recommended.
